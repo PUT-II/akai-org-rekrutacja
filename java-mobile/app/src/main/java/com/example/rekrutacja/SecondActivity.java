@@ -26,15 +26,12 @@ public class SecondActivity extends AppCompatActivity {
                 Podpisanie - chodzi o android:text.
          */
 
-        binding.firstButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.image.setVisibility(View.GONE);
-            }
-        });
-        binding.secondButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        binding.firstButton.setOnClickListener(v -> binding.image.setVisibility(View.INVISIBLE));
+        binding.secondButton.setOnClickListener(v -> binding.image.setVisibility(View.VISIBLE));
+        binding.bothButton.setOnClickListener(v -> {
+            if(binding.image.getVisibility() == View.VISIBLE) {
+                binding.image.setVisibility(View.INVISIBLE);
+            } else {
                 binding.image.setVisibility(View.VISIBLE);
             }
         });

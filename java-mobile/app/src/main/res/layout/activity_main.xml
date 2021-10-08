@@ -30,6 +30,11 @@
         android:layout_margin="8dp"
         android:text="Przycisk" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mój button" />
 
 
     <!--2.a TODO Kolejnym zadaniem jest wstawienie nowego przycisku

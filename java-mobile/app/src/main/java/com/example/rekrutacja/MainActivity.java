@@ -1,11 +1,14 @@
 package com.example.rekrutacja;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.rekrutacja.databinding.ActivityMainBinding;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,13 +20,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.button.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                onButtonClick();
-            }
-        });
+        binding.button.setOnClickListener(v -> onButtonClick());
+        binding.button2.setOnClickListener(v -> onYourButtonClick());
     }
 
     /*1.TODO Pierwszym z zadań jest implementacja metody, w taki sposób, aby
@@ -34,7 +32,15 @@ public class MainActivity extends AppCompatActivity {
           Podpowiedź poczytaj o Intent.
    */
     private void onButtonClick() {
-        binding.textView.setText(binding.editText.getText().toString());
+        String userText = binding.editText.getText().toString();
+        binding.textView.setText(userText);
+
+        if (!userText.equals("AKAI")) {
+            return;
+        }
+
+        Intent intent = new Intent(getBaseContext(), SecondActivity.class);
+        startActivity(intent);
     }
 
     /*2.b TODO Druga część tego zadania polega na implementacji metody, która zmienia
@@ -45,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             Kolejne zadanie czeka na Ciebie w pliku SecondActiviy
      */
     private void onYourButtonClick() {
-
+        String userText = binding.editText.getText().toString().toUpperCase(Locale.ROOT);
+        binding.textView.setText(userText);
     }
 }

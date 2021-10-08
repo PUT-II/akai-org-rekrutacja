@@ -18,13 +18,15 @@
         android:id="@+id/firstButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp" />
+        android:layout_margin="8dp"
+        android:text="Ukryj obrazek" />
 
     <Button
         android:id="@+id/secondButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp" />
+        android:layout_margin="8dp"
+        android:text="Pokaż obrazek" />
 
     <Button
         android:id="@+id/bothButton"

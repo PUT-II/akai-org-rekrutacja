@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-mobile.iml" filepath="$PROJECT_DIR$/.idea/modules/java-mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Rekrutacja.iml" filepath="$PROJECT_DIR$/.idea/modules/Rekrutacja.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Rekrutacja.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Rekrutacja.app.iml" />
     </modules>
   </component>
 </project>
