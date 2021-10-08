@@ -1,4 +1,6 @@
-from .RatioObtainer import RatioObtainer
+import sys
+
+from RatioObtainer import RatioObtainer
 
 
 class App:
@@ -21,3 +23,12 @@ class App:
         if not obtainer.was_ratio_saved_today():
             obtainer.fetch_ratio()
         return obtainer.get_matched_ratio_value()
+
+
+def __main():
+    app = App(sys.argv)
+    print(app.get_result_equation())
+
+
+if __name__ == "__main__":
+    __main()

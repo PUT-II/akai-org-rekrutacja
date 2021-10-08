@@ -7,5 +7,6 @@ class Exporter:
         pass
 
     def save_tasks(self, tasks):
-        # TODO zapisz taski do pliku tutaj
-        pass
+        tasks_json = json.dumps(tasks, indent=1)
+        with open("taski.json", mode="w", encoding="utf8") as file:
+            file.write(tasks_json)

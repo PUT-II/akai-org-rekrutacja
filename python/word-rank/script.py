@@ -22,6 +22,7 @@ sentences = [
     'Nie powinno sprawić żadnego problemu, bo Google jest dozwolony',
 ]
 
+
 # Example result:
 # 1. "mam" - 12
 # 2. "tak" - 5
@@ -29,3 +30,18 @@ sentences = [
 
 
 # Good luck! You can write all the code in this file.
+def __main():
+    rank = {}
+    for sentence in sentences:
+        words = sentence.lower().split()
+        for word in words:
+            rank[word] = rank[word] + 1 if word in rank else 1
+
+    sorted_rank = sorted(rank.items(), key=lambda elem: elem[1], reverse=True)
+
+    for i, (word, occurrences) in enumerate(list(sorted_rank)[0:3]):
+        print(f'{i}. "{word}" - {occurrences}')
+
+
+if __name__ == "__main__":
+    __main()

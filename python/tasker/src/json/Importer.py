@@ -4,12 +4,12 @@ import json
 class Importer:
 
     def __init__(self):
+        self.__encoded_tasks: str = ""
         pass
 
     def read_tasks(self):
-        # TODO odczytaj plik i zdekoduj treść tutaj
-        pass
+        with open("taski.json", mode="r", encoding="utf8") as file:
+            self.__encoded_tasks = file.read()
 
     def get_tasks(self):
-        # TODO zwróć zdekodowane taski tutaj
-        pass
+        return json.loads(self.__encoded_tasks)
