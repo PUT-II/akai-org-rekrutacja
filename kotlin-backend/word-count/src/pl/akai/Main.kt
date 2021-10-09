@@ -28,5 +28,14 @@ fun main() {
             2. "tak" - 5
             3. "z" - 2
     */
-    println("Hello World!")
+    val rank = sentences.flatMap { it.split(" ") }
+        .map { it.lowercase() }
+        .groupingBy { it }
+        .eachCount().entries
+        .sortedByDescending { it.value }
+        .slice(0..2)
+
+    rank.forEachIndexed { index, (word: String, occurrences: Int) ->
+        println("${index + 1}. $word - $occurrences")
+    }
 }

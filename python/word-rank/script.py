@@ -40,7 +40,7 @@ def __main():
     sorted_rank = sorted(rank.items(), key=lambda elem: elem[1], reverse=True)
 
     for i, (word, occurrences) in enumerate(list(sorted_rank)[0:3]):
-        print(f'{i}. "{word}" - {occurrences}')
+        print(f'{i + 1}. "{word}" - {occurrences}')
 
 
 if __name__ == "__main__":

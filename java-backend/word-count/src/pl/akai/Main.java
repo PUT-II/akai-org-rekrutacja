@@ -1,8 +1,14 @@
 package pl.akai;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class Main {
 
-    private static String[] sentences = {
+    private static final String[] sentences = {
             "Taki mamy klimat",
             "Wszędzie dobrze ale w domu najlepiej",
             "Wyskoczył jak Filip z konopii",
@@ -30,7 +36,28 @@ public class Main {
                 2. "tak" - 5
                 3. "z" - 2
         */
-        System.out.println("Hello world");
+
+        var words = Arrays.stream(sentences)
+                .flatMap(it -> Arrays.stream(it.split(" ")))
+                .map(it -> it.toLowerCase(Locale.ROOT))
+                .collect(Collectors.toList());
+
+        Map<String, Integer> rank = new HashMap<>();
+
+        for (var word : words) {
+            if (rank.containsKey(word)) {
+                rank.put(word, rank.get(word) + 1);
+            } else {
+                rank.put(word, 1);
+            }
+        }
+
+        var topRank = rank.entrySet().stream()
+                .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
+                .limit(3)
+                .collect(Collectors.toList());
+
+        System.out.println(topRank);
     }
 
 }
